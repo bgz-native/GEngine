@@ -15,6 +15,7 @@
     <ProjectGuid>{9167D2CD-B9E6-4D81-B668-0B47276FA5CD}</ProjectGuid>
     <RootNamespace>GGame</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>GGame.win64</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -64,6 +65,10 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PreLinkEvent />
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)bin\$(Configuration)-$(Platform)\GEngine\GEngine.dll" "$(TargetDir)" /Q /R /Y /I</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -81,6 +86,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PreLinkEvent />
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)bin\$(Configuration)-$(Platform)\GEngine\GEngine.dll" "$(TargetDir)" /Q /R /Y /I</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ProjectReference Include="..\GEngine\GEngine.vcxproj">

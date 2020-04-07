@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GEngine/Core.h"
+#include "GEngine/Core/Core.h"
 
 namespace GEngine
 {

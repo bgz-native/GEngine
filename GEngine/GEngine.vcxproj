@@ -83,16 +83,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\GEngine\Core\Log.h" />
     <ClInclude Include="src\GEngine\Events\ApplicationEvent.h" />
     <ClInclude Include="src\GEngine\Events\Event.h" />
     <ClInclude Include="src\GEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\GEngine\Events\MouseEvent.h" />
-    <ClInclude Include="src\GEngine\Application.h" />
-    <ClInclude Include="src\GEngine\Core.h" />
+    <ClInclude Include="src\GEngine\Core\Application.h" />
+    <ClInclude Include="src\GEngine\Core\Core.h" />
     <ClInclude Include="src\GEngine.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\GEngine\Application.cpp" />
+    <ClCompile Include="src\GEngine\Core\Application.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

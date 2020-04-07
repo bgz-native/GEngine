@@ -3,5 +3,5 @@
 // main API header
 
 
-#include "GEngine/Application.h"
-#include "GEngine/Core.h"
+#include "GEngine/Core/Application.h"
+#include "GEngine/Core/Core.h"

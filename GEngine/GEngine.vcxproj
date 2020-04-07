@@ -58,6 +58,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GENGINE_PLATFORM_WINDOWS;GENGINE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -72,6 +73,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GENGINE_PLATFORM_WINDOWS;GENGINE_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -81,6 +83,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\GEngine\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\GEngine\Events\Event.h" />
+    <ClInclude Include="src\GEngine\Events\KeyEvent.h" />
+    <ClInclude Include="src\GEngine\Events\MouseEvent.h" />
     <ClInclude Include="src\GEngine\Application.h" />
     <ClInclude Include="src\GEngine\Core.h" />
     <ClInclude Include="src\GEngine.h" />

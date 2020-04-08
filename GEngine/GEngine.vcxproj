@@ -83,7 +83,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\GEngine\Core\Log.h" />
+    <ClInclude Include="src\GEngine\Core\Window.h" />
     <ClInclude Include="src\GEngine\Events\ApplicationEvent.h" />
     <ClInclude Include="src\GEngine\Events\Event.h" />
     <ClInclude Include="src\GEngine\Events\KeyEvent.h" />
@@ -91,9 +91,11 @@
     <ClInclude Include="src\GEngine\Core\Application.h" />
     <ClInclude Include="src\GEngine\Core\Core.h" />
     <ClInclude Include="src\GEngine.h" />
+    <ClInclude Include="src\Platform\Win64\Win64Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GEngine\Core\Application.cpp" />
+    <ClCompile Include="src\Platform\Win64\Win64Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

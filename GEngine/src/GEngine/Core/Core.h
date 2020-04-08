@@ -1,5 +1,13 @@
 #pragma once
 
+#include <iostream>
+#include <string>
+#include <stdio.h>
+
+#ifdef GENGINE_PLATFORM_WINDOWS
+	#include <Windows.h>
+#endif
+
 #ifdef GENGINE_PLATFORM_WINDOWS
 
 	#ifdef GENGINE_BUILD_DLL
@@ -9,7 +17,6 @@
 	#endif
 
 	#ifdef _DEBUG
-	#		include <stdio.h>
 	#		define LOGD(...) fprintf(stdout, __VA_ARGS__)
 	#		define LOGV(...) fprintf(stdout, __VA_ARGS__) 
 	#		define LOGE(...) fprintf(stdout, __VA_ARGS__)
@@ -26,6 +33,7 @@
 #endif
 
 
-
-
 #define BIT(x)(1<<x)
+
+
+

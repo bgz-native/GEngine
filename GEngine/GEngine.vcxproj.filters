@@ -50,5 +50,8 @@
     <ClCompile Include="src\Platform\Win64\Win64Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\GEngine\Core\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

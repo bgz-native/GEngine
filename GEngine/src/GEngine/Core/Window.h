@@ -16,6 +16,7 @@ struct WindowProperty
 				   unsigned int height		= 600) 
 		: m_title(title), m_width(width), m_height(height)
 	{
+
 	}
 
 };
@@ -23,14 +24,15 @@ struct WindowProperty
 class GENGINE_API Window
 {
 public:
-	virtual ~Window() {}
+	Window() {}
+	virtual ~Window() = default;
 
 	virtual void Update() = 0;
 
 	virtual unsigned int GetWidth() const = 0;
 	virtual unsigned int GetHeight() const = 0;
 
-	static Window* Create();
+	static Window* Create(const WindowProperty& property = WindowProperty());
 
 
 };

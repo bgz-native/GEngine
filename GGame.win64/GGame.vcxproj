@@ -67,8 +67,17 @@
     </Link>
     <PreLinkEvent />
     <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)bin\$(Configuration)-$(Platform)\GEngine\GEngine.dll" "$(TargetDir)" /Q /R /Y /I</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>

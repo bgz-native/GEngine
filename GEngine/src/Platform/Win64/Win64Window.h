@@ -1,34 +1,36 @@
 #pragma once
 
 #include "GEngine/Core/Window.h"
+#include "glfw3.h"
 
 namespace GEngine
 {
 
-struct Win64WindowProperty
-{
-	std::string title;
-	unsigned int width;
-	unsigned int height;
-};
-
-
 class Win64Window : public Window
 {
-	Win64Window();
+public:
+	Win64Window(const WindowProperty& property);
 	virtual ~Win64Window();
 
 	void Update() override;
-
-	inline unsigned int GetWidth() const override { return m_property.width; }
-	inline unsigned int GetHeight() const override { return m_property.height; }
+	
+	inline unsigned int GetWidth() const override { return m_property.m_width; }
+	inline unsigned int GetHeight() const override { return m_property.m_height; }
 
 private:
-	virtual void Start();
+	virtual void Start(const WindowProperty& property);
 	virtual void Destroy();
 
+	GLFWwindow* m_glfwWindow;
 
 private:
+	struct Win64WindowProperty
+	{
+		std::string m_title;
+		unsigned int m_width;
+		unsigned int m_height;
+	};
+
 	Win64WindowProperty m_property;
 
 };

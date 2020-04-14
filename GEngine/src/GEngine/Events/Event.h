@@ -36,6 +36,8 @@ class GENGINE_API Event
 public:
 	virtual EventType GetEventType() const = 0;
 	virtual const char* GetName() const = 0;
+
+	//TODO Get specific logs for each events attributes
 	virtual int GetEventCategoryFlags() const = 0;
 
 	inline bool IsInCategory(EventCategory category)
@@ -43,8 +45,10 @@ public:
 		return GetEventCategoryFlags() & category;
 	}
 
-protected:
-	bool m_handled = false;
+	//inline bool getIsHandled() { return m_handled; }
+
+//protected:
+	bool handled = false;
 };
 
 class EventDispatcher
@@ -61,7 +65,7 @@ public:
 	{
 		if (m_event.GetEventType() == T::GetStaticType())
 		{
-			m_event.m_handled = func(*(T*)&m_event);
+			m_event.handled = func(*(T*)&m_event);
 			return true;
 		}
 

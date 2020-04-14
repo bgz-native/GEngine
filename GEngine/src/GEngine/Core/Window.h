@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core.h"
+#include "GEngine/Events/Event.h"
 
 namespace GEngine
 {
@@ -24,6 +25,8 @@ struct WindowProperty
 class GENGINE_API Window
 {
 public:
+	using EventCallbackFn = std::function<void(Event&)>;
+
 	Window() {}
 	virtual ~Window() = default;
 
@@ -31,6 +34,8 @@ public:
 
 	virtual unsigned int GetWidth() const = 0;
 	virtual unsigned int GetHeight() const = 0;
+
+	virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
 
 	static Window* Create(const WindowProperty& property = WindowProperty());
 

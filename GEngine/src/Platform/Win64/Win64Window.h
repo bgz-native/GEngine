@@ -17,6 +17,8 @@ public:
 	inline unsigned int GetWidth() const override { return m_property.m_width; }
 	inline unsigned int GetHeight() const override { return m_property.m_height; }
 
+	inline void SetEventCallback(const EventCallbackFn& callback) override { m_property.m_eventCallback = callback; }
+
 private:
 	virtual void Start(const WindowProperty& property);
 	virtual void Destroy();
@@ -29,6 +31,8 @@ private:
 		std::string m_title;
 		unsigned int m_width;
 		unsigned int m_height;
+
+		EventCallbackFn m_eventCallback;
 	};
 
 	Win64WindowProperty m_property;

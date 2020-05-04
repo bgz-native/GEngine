@@ -1,6 +1,9 @@
 #pragma once
 
 #include "GEngine/Core/Window.h"
+
+//TODO include glad on opengl abstraction
+#include "glad/glad.h"
 #include "glfw3.h"
 
 namespace GEngine

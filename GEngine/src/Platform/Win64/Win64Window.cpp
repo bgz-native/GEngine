@@ -42,6 +42,9 @@ void Win64Window::Start(const WindowProperty& property)
 	//TODO refactor
 	glfwMakeContextCurrent(m_glfwWindow);
 
+	//TODO ERROR CHECK
+	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+
 	glfwSetWindowUserPointer(m_glfwWindow, &m_property);
 
 

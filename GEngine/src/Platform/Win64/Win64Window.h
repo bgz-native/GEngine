@@ -1,10 +1,9 @@
 #pragma once
 
 #include "GEngine/Core/Window.h"
+#include "GEngine/Renderer/Renderer.h"
 
-//TODO include glad on opengl abstraction
-#include "glad/glad.h"
-#include "glfw3.h"
+#include <glfw3.h>
 
 namespace GEngine
 {
@@ -27,6 +26,9 @@ private:
 	virtual void Destroy();
 
 	GLFWwindow* m_glfwWindow;
+
+	Renderer* m_rendererContext;
+
 
 private:
 	struct Win64WindowProperty

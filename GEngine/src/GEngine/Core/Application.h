@@ -21,10 +21,12 @@ public:
 private:
 	bool OnWindowClose(WindowCloseEvent& event);
 
-
 	Window* m_window;
 	bool m_isRunning = false;
 
+	unsigned int m_vertexArray;
+	unsigned int m_vertexBuffer;
+	unsigned int m_indexBuffer;
 
 };
 

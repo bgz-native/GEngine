@@ -3,6 +3,7 @@
 #include "GEngine/Events/ApplicationEvent.h"
 #include "GEngine/Events/MouseEvent.h"
 #include "GEngine/Events/KeyEvent.h"
+#include "Platform/OpenGL/OpenGLContext.h"
 
 namespace GEngine
 {
@@ -25,6 +26,7 @@ Win64Window::~Win64Window()
 
 void Win64Window::Start(const WindowProperty& property)
 {
+
 	glfwInit();
 
 	//TODO check if glfw is success exit 1 if not
@@ -39,11 +41,8 @@ void Win64Window::Start(const WindowProperty& property)
 		m_property.m_title.c_str(),
 		NULL, NULL);
 
-	//TODO refactor
-	glfwMakeContextCurrent(m_glfwWindow);
-
-	//TODO ERROR CHECK
-	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+	m_rendererContext = new OpenGLContext(m_glfwWindow);
+	m_rendererContext->Init();
 
 	glfwSetWindowUserPointer(m_glfwWindow, &m_property);
 
@@ -130,14 +129,9 @@ void Win64Window::Start(const WindowProperty& property)
 
 void Win64Window::Update()
 {
-	//TEST ONLY, please remove
-	glClearColor(1, 0, 1, 1);
-	glClear(GL_COLOR_BUFFER_BIT);
-
-	glfwSwapBuffers(m_glfwWindow);
+	m_rendererContext->SwapBuffers();
 
 	glfwPollEvents();
-
 }
 
 

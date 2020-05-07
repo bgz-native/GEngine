@@ -90,6 +90,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\GEngine\Core\Window.h" />
     <ClInclude Include="src\GEngine\Events\ApplicationEvent.h" />
     <ClInclude Include="src\GEngine\Events\Event.h" />
@@ -98,9 +99,11 @@
     <ClInclude Include="src\GEngine\Core\Application.h" />
     <ClInclude Include="src\GEngine\Core\Core.h" />
     <ClInclude Include="src\GEngine.h" />
+    <ClInclude Include="src\GEngine\Renderer\Renderer.h" />
     <ClInclude Include="src\Platform\Win64\Win64Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\GEngine\Core\Application.cpp" />
     <ClCompile Include="src\GEngine\Core\Window.cpp" />
     <ClCompile Include="src\Platform\Win64\Win64Window.cpp" />

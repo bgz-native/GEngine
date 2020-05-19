@@ -3,12 +3,20 @@
 namespace GEngine
 {
 
-class Renderer
+enum class RendererAPI
+{
+	None = 0,
+	OpenGL = 1
+};
+
+
+class Renderer 
 {
 public:
-	virtual void Init() = 0;
-	virtual void SwapBuffers() = 0;
+	inline static RendererAPI GetAPI() { return s_rendererAPI; }
 
+private:
+	static RendererAPI s_rendererAPI;
 };
 
 }

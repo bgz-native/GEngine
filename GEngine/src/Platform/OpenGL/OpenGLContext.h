@@ -1,13 +1,13 @@
 #pragma once
 
-#include "GEngine/Renderer/Renderer.h"
+#include "GEngine/Renderer/Context.h"
 
 struct GLFWwindow;
 
 namespace GEngine
 {
 
-class OpenGLContext : public Renderer
+class OpenGLContext : public Context
 {
 public:
 	OpenGLContext(GLFWwindow* windowHandle);

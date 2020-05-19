@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GEngine/Core/Window.h"
-#include "GEngine/Renderer/Renderer.h"
+#include "GEngine/Renderer/Context.h"
 
 #include <glfw3.h>
 
@@ -27,7 +27,7 @@ private:
 
 	GLFWwindow* m_glfwWindow;
 
-	Renderer* m_rendererContext;
+	Context* m_rendererContext;
 
 
 private:

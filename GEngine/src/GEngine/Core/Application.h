@@ -4,7 +4,8 @@
 #include "Window.h"
 #include "GEngine/Events/Event.h"
 #include "GEngine/Events/ApplicationEvent.h"
-
+#include "GEngine/Renderer/Shader.h"
+#include "GEngine/Renderer/Buffer.h"
 
 namespace GEngine
 {
@@ -25,8 +26,12 @@ private:
 	bool m_isRunning = false;
 
 	unsigned int m_vertexArray;
-	unsigned int m_vertexBuffer;
-	unsigned int m_indexBuffer;
+
+	VertexBuffer* m_vertexBuffer;
+	IndexBuffer* m_indexBuffer;
+
+
+	Shader* m_shader;
 
 };
 

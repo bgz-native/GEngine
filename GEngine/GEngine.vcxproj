@@ -59,6 +59,7 @@
       <PreprocessorDefinitions>GENGINE_PLATFORM_WINDOWS;GENGINE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glad\include</AdditionalIncludeDirectories>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -79,6 +80,7 @@
       <PreprocessorDefinitions>GENGINE_PLATFORM_WINDOWS;GENGINE_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)vendor\glfw\include;$(ProjectDir)vendor\glad\include</AdditionalIncludeDirectories>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -90,6 +92,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\GEngine\Renderer\Buffer.h" />
+    <ClInclude Include="src\GEngine\Renderer\Renderer.h" />
+    <ClInclude Include="src\GEngine\Renderer\Shader.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\GEngine\Core\Window.h" />
     <ClInclude Include="src\GEngine\Events\ApplicationEvent.h" />
@@ -99,10 +105,14 @@
     <ClInclude Include="src\GEngine\Core\Application.h" />
     <ClInclude Include="src\GEngine\Core\Core.h" />
     <ClInclude Include="src\GEngine.h" />
-    <ClInclude Include="src\GEngine\Renderer\Renderer.h" />
+    <ClInclude Include="src\GEngine\Renderer\Context.h" />
     <ClInclude Include="src\Platform\Win64\Win64Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\GEngine\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\GEngine\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\GEngine\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\GEngine\Core\Application.cpp" />
     <ClCompile Include="src\GEngine\Core\Window.cpp" />

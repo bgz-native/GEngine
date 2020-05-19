@@ -5,6 +5,9 @@
 #include <stdio.h>
 #include <functional>
 
+//TODO investigate, only needed by uint32_t
+#include <stdint.h>
+
 #ifdef GENGINE_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

@@ -4,6 +4,7 @@
 #include <string>
 #include <stdio.h>
 #include <functional>
+#include <vector>
 
 //TODO investigate, only needed by uint32_t
 #include <stdint.h>

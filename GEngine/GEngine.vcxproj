@@ -95,6 +95,7 @@
     <ClInclude Include="src\GEngine\Renderer\Buffer.h" />
     <ClInclude Include="src\GEngine\Renderer\Renderer.h" />
     <ClInclude Include="src\GEngine\Renderer\Shader.h" />
+    <ClInclude Include="src\GEngine\Renderer\VertexArray.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\GEngine\Core\Window.h" />
@@ -106,16 +107,19 @@
     <ClInclude Include="src\GEngine\Core\Core.h" />
     <ClInclude Include="src\GEngine.h" />
     <ClInclude Include="src\GEngine\Renderer\Context.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Platform\Win64\Win64Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GEngine\Renderer\Buffer.cpp" />
     <ClCompile Include="src\GEngine\Renderer\Renderer.cpp" />
     <ClCompile Include="src\GEngine\Renderer\Shader.cpp" />
+    <ClCompile Include="src\GEngine\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\GEngine\Core\Application.cpp" />
     <ClCompile Include="src\GEngine\Core\Window.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Platform\Win64\Win64Window.cpp" />
     <ClCompile Include="vendor\glad\src\glad.c" />
   </ItemGroup>

@@ -43,3 +43,5 @@
 
 //TODO ASSERT
 
+//TODO check all pointers, make const if neccesary
+

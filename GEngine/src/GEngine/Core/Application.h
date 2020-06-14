@@ -6,6 +6,7 @@
 #include "GEngine/Events/ApplicationEvent.h"
 #include "GEngine/Renderer/Shader.h"
 #include "GEngine/Renderer/Buffer.h"
+#include "GEngine/Renderer/VertexArray.h"
 
 namespace GEngine
 {
@@ -25,11 +26,9 @@ private:
 	Window* m_window;
 	bool m_isRunning = false;
 
-	unsigned int m_vertexArray;
-
+	VertexArray* m_vertexArray;
 	VertexBuffer* m_vertexBuffer;
 	IndexBuffer* m_indexBuffer;
-
 
 	Shader* m_shader;
 

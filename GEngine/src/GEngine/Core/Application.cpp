@@ -5,35 +5,18 @@
 namespace GEngine
 {
 
-static GLenum DataTypeToOpenGLBaseType(DataType type)
-{
-	switch (type)
-	{
-		case GEngine::DataType::Float: return GL_FLOAT;
-		case GEngine::DataType::Float2: return GL_FLOAT;
-		case GEngine::DataType::Float3: return GL_FLOAT;
-		case GEngine::DataType::Float4: return GL_FLOAT;
-		case GEngine::DataType::Mat3: return GL_FLOAT;
-		case GEngine::DataType::Mat4: return GL_FLOAT;
-		case GEngine::DataType::Int: return GL_INT;
-		case GEngine::DataType::Int2: return GL_INT;
-		case GEngine::DataType::Int3: return GL_INT;
-		case GEngine::DataType::Int4: return GL_INT;
-		case GEngine::DataType::Bool: return GL_BOOL;
-	}
-
-	return 0;
-
-}
-
 Application::Application()
 {
 	m_isRunning = true;
 	m_window = Window::Create();
 	m_window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
 
+	/*
 	glGenVertexArrays(1, &m_vertexArray);
 	glBindVertexArray(m_vertexArray);
+	*/
+
+	m_vertexArray = VertexArray::Create();
 
 	float vertices[3 * 7] = {
 		-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
@@ -41,32 +24,18 @@ Application::Application()
 		 0.0f,  0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f
 	};
 	m_vertexBuffer = VertexBuffer::Create(vertices, sizeof(vertices));
+	
+	BufferLayout layout = {
+		{ DataType::Float3, "a_Position" },
+		{ DataType::Float4, "a_Color" }
+	};
 
-	//glEnableVertexAttribArray(0);
-	//glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, (3 * sizeof(float)), nullptr);
-
-	{
-		BufferLayout layout = {
-			{ DataType::Float3, "a_Position" },
-			{ DataType::Float4, "a_Color" }
-		};
-
-		m_vertexBuffer->SetLayout(layout);
-	}
-
-
-	uint32_t index = 0;
-	for (const auto& element : m_vertexBuffer->GetLayout())
-	{
-		glEnableVertexAttribArray(index);
-		glVertexAttribPointer(index, element.GetElementCount(),
-			DataTypeToOpenGLBaseType(element.type), element.normalized ? GL_TRUE : GL_FALSE,
-			m_vertexBuffer->GetLayout().GetStride(), (const void*)element.offset);
-		index++;
-	}
+	m_vertexBuffer->SetLayout(layout);
+	m_vertexArray->AddVertexBuffer(m_vertexBuffer);
 
 	uint32_t indices[3] = { 0, 1, 2 };
 	m_indexBuffer = IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
+	m_vertexArray->SetIndexBuffer(m_indexBuffer);
 
 	std::string vertexSource = R"(
 
@@ -121,7 +90,7 @@ void Application::Run()
 
 		m_shader->Bind();
 
-		glBindVertexArray(m_vertexArray);
+		m_vertexArray->Bind();
 		glDrawElements(GL_TRIANGLES, m_indexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr);
 
 		m_window->Update();

@@ -16,6 +16,9 @@ public:
 
 	virtual void AddVertexBuffer(const VertexBuffer* vertexBuffer) override;
 	virtual void SetIndexBuffer(const IndexBuffer* indexBuffer) override;
+
+	virtual const IndexBuffer* GetIndexBuffer() const { return m_indexBuffer; }
+
 private:
 	std::vector<const VertexBuffer*> m_vertexBuffers;
 	const IndexBuffer* m_indexBuffer;

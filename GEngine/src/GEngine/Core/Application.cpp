@@ -1,6 +1,8 @@
 #include "Application.h"
 
-#include <glad/glad.h>
+//#include <glad/glad.h>
+
+#include "GEngine/Renderer/Renderer.h"
 
 namespace GEngine
 {
@@ -85,13 +87,25 @@ void Application::Run()
 {
 	while (m_isRunning)
 	{
-		glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		//glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
+		RenderCommand::SetClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 
+		//glClear(GL_COLOR_BUFFER_BIT);
+		RenderCommand::Clear();
+
+		Renderer::BeginScene();
+
+		//can have multiple shader and va
 		m_shader->Bind();
 
-		m_vertexArray->Bind();
-		glDrawElements(GL_TRIANGLES, m_indexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr);
+		//m_vertexArray->Bind();
+		Renderer::Submit(m_vertexArray);
+		//glDrawElements(GL_TRIANGLES, m_indexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr);
+
+
+		Renderer::EndScene();
+
+		
 
 		m_window->Update();
 	}

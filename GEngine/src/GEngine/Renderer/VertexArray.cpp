@@ -10,8 +10,8 @@ VertexArray* VertexArray::Create()
 {
 	switch (Renderer::GetAPI())
 	{
-		case RendererAPI::None: LOGE("Renderer API not set"); return nullptr;
-		case RendererAPI::OpenGL: return new OpenGLVertexArray();
+		case RendererAPI::API::None: LOGE("Renderer API not set"); return nullptr;
+		case RendererAPI::API::OpenGL: return new OpenGLVertexArray();
 	}
 
 	LOGE("Unknown Error in Graphics Buffer");
